@@ -1,1 +1,4 @@
-print("mason smells bad bad bad bad bad")
+x = 6
+while x < 5:
+    print(x)
+    x += 1
