@@ -33,12 +33,36 @@ for s in turtle_shapes:
     vt.setheading(270)
 
     tloc += 50
-
+pixel_size = 20
+distance = 3
 # TODO: move turtles across and down screen, stopping for collisions
 """
 for step in range(50):
 	# do something
 """
+for step in range(50):
+    for vt in vert_turtles:
+        for ht in horiz_turtles:
+            ht.forward(distance)
+            vt.forward(distance)
+
+            if distance <= 23:
+                distance += 5
+            else:
+                distance = 3
+
+            if abs(ht.xcor() - vt.xcor()) < pixel_size:
+                if abs(ht.ycor() - vt.ycor()) < pixel_size:
+                    ht.fillcolor("gray")
+                    horiz_turtles.remove(ht)
+                    vt.fillcolor("gray")
+                    vert_turtles.remove(vt)
+                    distance -= 3
+
+
+
+
+
 
 wn = trtl.Screen()
 wn.mainloop()
